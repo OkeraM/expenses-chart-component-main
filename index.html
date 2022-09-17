@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
+  <link href="data.json">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <title>Frontend Mentor | Expenses chart component</title>
+  
+</head>
+
+<body>
+
+  <div class="mybalance-wrapper">
+
+    <div class="mybalance-wrapper-2">
+
+    <div class="small-wrapper">
+
+    <h6>My balance</h6>
+    <h2>$921.48</h2>
+
+    </div>
+
+    <img src="./images/logo.svg" alt="" class="logo">
+
+    </div>
+   
+  </div>
+
+  <div class="spending">
+
+    <h2> Spending - Last 7 days </h2>
+
+    <div>
+      <canvas id="myChart"></canvas>
+    </div>
+
+    <hr>
+
+    <div class="spending_wrapper">
+    
+    <div class="spending_wrapper_1">
+    <h6> Total this month </h6>
+    <h1> $478.33 </h1>
+    </div>
+
+    <div class="spending_wrapper_2">
+    <h5> +2.4% </h5>
+    <h6> from last month </h6>
+    </div>
+
+    </div>
+
+  </div>
+
+  <script> 
+
+const ctx = document.getElementById('myChart').getContext('2d');
+const myChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'],
+        datasets: [{
+            label: '# of Votes',
+            data: [17.14, 34.91, 52.36, 37.07, 23.39, 43.28, 25.48],
+            backgroundColor: [
+                'rgba(228, 73, 31, 0.8)',
+                'rgba(228, 73, 31, 0.9)',
+                'rgba(163, 221, 215, 0.8)',
+                'rgba(228, 73, 31, 0.7)',
+                'rgba(228, 73, 31, 0.8)',
+                'rgba(228, 73, 31, 0.9)'
+            ],
+            borderColor: [
+                'rgba(228, 73, 31, 1)',
+                'rgba(228, 73, 31, 1)',
+                'rgba(163, 221, 215, 1)',
+                'rgba(228, 73, 31, 1)',
+                'rgba(228, 73, 31, 1)',
+                'rgba(228, 73, 31, 1)',
+                'rgba(228, 73, 31, 1)'
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        }
+    }
+}); 
+  
+  </script>
+  
+</body>
+
+</html>
